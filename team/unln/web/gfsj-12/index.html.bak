@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>JS</title>
+    <script type="text/javascript">
+    function dechiffre(pass_enc)
+	{
+        var pass = "70,65,85,88,32,80,65,83,83,87,79,82,68,32,72,65,72,65";//设置的pass
+        var tab  = pass_enc.split(','); //输入的tab
+        var tab2 = pass.split(','); //设置的pass的tab
+		
+		var i,j,k,l=0,m,n,o,p = "";
+		
+		i = 0;
+		j = tab.length;//输入tab的长度
+        k = j + (l) + (n=0);
+        n = tab2.length;//设置tab的长度
+		
+        for(i = (o=0); i < (k = j = n); i++ )
+		{
+		o = tab[i-l];//字符串作为数组
+		p += String.fromCharCode((o = tab[i]));//修改了此处
+        if(i == 5)
+			break;//到第五位换下一个循环
+		}
+		
+        for(i = (o=0); i < (k = j = n); i++ )
+		{
+			o = tab[i-l];
+			if(i > 5 && i < k-1)
+				p += String.fromCharCode((o = tab[i]));//修改了此处
+        }
+		
+        p += String.fromCharCode(tab2[17]); //增加p
+        
+		//输出p
+		pass = p;
+		return pass;
+    }
+	
+    String["fromCharCode"](dechiffre("\x35\x35\x2c\x35\x36\x2c\x35\x34\x2c\x37\x39\x2c\x31\x31\x35\x2c\x36\x39\x2c\x31\x31\x34\x2c\x31\x31\x36\x2c\x31\x30\x37\x2c\x34\x39\x2c\x35\x30"));	
+	//并不输出
+    h = window.prompt('Enter password');
+    alert( dechiffre(h) );
+	
+</script>
+</head>
+
+</html>
